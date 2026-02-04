@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .thank-you-container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .admission-number {
+            font-weight: bold;
+            color: #333;
+        }
+        @media (max-width: 600px) {
+            .thank-you-container {
+                padding: 15px;
+                width: 90%;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let admissionNoElement = document.getElementById("admissionNo");
+            if (admissionNoElement) {
+                let lastAdmissionNumber = 1000; // Example starting point
+                lastAdmissionNumber++;
+                admissionNoElement.textContent = `FF-${lastAdmissionNumber}`;
+            } else {
+                console.error("Element with ID 'admissionNo' not found!");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="thank-you-container">
+        <h1>Thank You for Your Submission!</h1>
+        <p>Your Admission Number is:</p>
+        <p class="admission-number" id="admissionNo"><i>Loading...</i></p>
+    </div>
+</body>
+</html>
+
